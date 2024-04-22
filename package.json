@@ -5,8 +5,15 @@
   "main": "js/main.js",
   "type": "module",
   "scripts": {
-    "dev": "node js/main.js",
-    "server": "json-server js/db/db.json"
+    "dev": "node --watch js/main.js",
+    "clients": "json-server js/db/clients.json -p 5501",
+    "employee": "json-server js/db/employee.json -p 5502",
+    "gama": "json-server js/db/gama.json -p 5503",
+    "office": "json-server js/db/office.json",
+    "payments": "json-server js/db/payments.json",
+    "product": "json-server js/db/product.json",
+    "request": "json-server js/db/request.json",
+    "delivery_details": "json-server js/db/delivery_details.json"
   },
   "keywords": [],
   "author": "",
