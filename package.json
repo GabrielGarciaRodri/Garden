@@ -10,10 +10,10 @@
     "employee": "json-server js/db/employee.json -p 5502",
     "gama": "json-server js/db/gama.json -p 5503",
     "office": "json-server js/db/office.json",
-    "payments": "json-server js/db/payments.json",
-    "product": "json-server js/db/product.json",
-    "request": "json-server js/db/request.json",
-    "delivery_details": "json-server js/db/delivery_details.json"
+    "payments": "json-server js/db/payments.json -p 5505",
+    "product": "json-server js/db/product.json -p 5506",
+    "request": "json-server js/db/request.json -p 5507",
+    "delivery_details": "json-server js/db/delivery_details.json -p 5508"
   },
   "keywords": [],
   "author": "",

@@ -1,19 +1,23 @@
-// import prompt from 'async-prompt'
 
-// import { postProfile } from './module/camper.js'
-
-// // console.log(await getAllProfile())
-// let name = await prompt("Ingrese el nombre: ")
-// console.log(await postProfile(name));
-
-// import {
-//     getAllOfficeCityAndMovil, getAllOfficeCodeCity 
-// } from "./module/office.js";
-
-// console.log(await getAllOfficeCityAndMovil());
+import {
+    getAllOfficeCityAndMovil, getAllOfficeCodeCity 
+} from "./module/office.js";
 
 import{getBoss,
-    getAllFullNameAndEmails
+    getAllFullNameAndEmails,
+    getAllFullNamePositionDiferentSalesRepresentative
 } from "./module/employee.js"
 
-console.log(await getBoss());
+// console.log(await getAllFullNamePositionDiferentSalesRepresentative());
+
+import { getAllNameFromSpain } from "./module/clients.js";
+
+// console.log(await getAllNameFromSpain());
+
+import {getAllRequestStatus} from "./module/request.js";
+
+// console.log(await getAllRequestStatus());
+
+import { getAllPaypalAndDate } from "./module/payments.js";
+
+console.log(await getAllPaypalAndDate())
