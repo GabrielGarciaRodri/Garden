@@ -22,6 +22,8 @@ import { getAllPaypalAndDate } from "./module/payments.js";
 
 // console.log(await getAllPaypalAndDate())
 
-import { getAllDates } from "./module/request.js";
+import {getAllRequestCodesClientCodesDateRequestAndDateWait,
+        getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays 
+} from "./module/request.js";
 
-console.log(await getAllDates());
+console.log(await getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays());
