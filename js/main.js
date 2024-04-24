@@ -20,4 +20,8 @@ import {getAllRequestStatus} from "./module/request.js";
 
 import { getAllPaypalAndDate } from "./module/payments.js";
 
-console.log(await getAllPaypalAndDate())
+// console.log(await getAllPaypalAndDate())
+
+import { getAllDates } from "./module/request.js";
+
+console.log(await getAllDates());
