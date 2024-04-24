@@ -2,7 +2,7 @@
 
 export const getAllRequestStatus = async()=>{
     // let status = encodeURIComponent("status");
-    let res = await fetch("http://localhost:3000/requests");
+    let res = await fetch("http://localhost:5507/requests");
     let data = await res.json();
     let dataUpdate = data.map(val => {
         return{
@@ -13,6 +13,18 @@ export const getAllRequestStatus = async()=>{
     return dataUpdate
 }
 
+export const getAllStatus = async() =>{
+    let res = await fetch("http://localhost:5507/requests")
+    let data = await res.json();
+    let uniqueStatusMethods = new Set();
+    data.forEach(val => {
+        uniqueStatusMethods.add(val.status);
+    });
+
+    let uniqueStatusMethodsArray = Array.from(uniqueStatusMethods);
+    return uniqueStatusMethodsArray;
+
+}
 // 9. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.
 
 export const getAllRequestCodesClientCodesDateRequestAndDateWait = async() => {
@@ -72,4 +84,12 @@ export const getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays = asyn
 //     });
 
 //     return dataUpdate;
+// }
+
+// Devuelve un listado de todos los pedidos que fueron rechazados en 2009.
+
+// export const getAllDeliveryRejectedYear2009 = async () =>{
+//     let res = await fetch ("http://localhost:5507/requests?status=Entregado")
+//     let data = await res.json();
+//     let 
 // }

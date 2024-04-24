@@ -8,13 +8,13 @@ import{getBoss,
     getAllFullNamePositionDiferentSalesRepresentative
 } from "./module/employee.js"
 
-// console.log(await getAllFullNamePositionDiferentSalesRepresentative());
+// console.log(await getAllFullNamePositdionDiferentSalesRepresentative());
 
 import { getAllNameFromSpain } from "./module/clients.js";
 
 // console.log(await getAllNameFromSpain());
 
-import {getAllRequestStatus} from "./module/request.js";
+import {getAllRequestStatus, getAllStatus} from "./module/request.js";
 
 // console.log(await getAllRequestStatus());
 
@@ -22,8 +22,9 @@ import { getAllPaypalAndDate } from "./module/payments.js";
 
 // console.log(await getAllPaypalAndDate())
 
-import {getAllRequestCodesClientCodesDateRequestAndDateWait,
+import {
+        getAllRequestCodesClientCodesDateRequestAndDateWait,
         getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays 
 } from "./module/request.js";
 
-console.log(await getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays());
+console.log(await getAllStatus());
