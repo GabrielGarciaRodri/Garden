@@ -10,21 +10,23 @@ import{getBoss,
 
 // console.log(await getAllFullNamePositdionDiferentSalesRepresentative());
 
-import { getAllNameFromSpain } from "./module/clients.js";
+import {getAllNameFromSpain,
+        getAllClientFromMadrid,
+        getAllClientAndRepresentName
+} from "./module/clients.js";
 
-// console.log(await getAllNameFromSpain());
+console.log(await getAllClientAndRepresentName());
 
-import {getAllRequestStatus, getAllStatus} from "./module/request.js";
 
-// console.log(await getAllRequestStatus());
 
 import { getAllPaypalAndDate } from "./module/payments.js";
 
 // console.log(await getAllPaypalAndDate())
 
+import {getAllRequestStatus, getAllStatus} from "./module/request.js";
 import {
         getAllRequestCodesClientCodesDateRequestAndDateWait,
         getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays 
 } from "./module/request.js";
 
-console.log(await getAllStatus());
+//console.log(await getAllStatus());
