@@ -36,34 +36,17 @@ export const getAllClientFromMadrid = async() =>{
 // }
 
 
-// export const getAllClientAndRepresentName = async () => {
-//     try {
-//         return await Promise.all((await (await fetch("http://localhost:5501/clients")).json()).map(async (client) => {
-//             const [employee] = await getEmployeesByCode(client.code_employee_sales_manager);
-//             const [office] = await getOfficesByCode(employee.code_office);
-            
-//             return {
-//                 client_name: client.client_name,
-//                 employees_full_name: `${employee.name} ${employee.lastname1} ${employee.lastname2}`,
-//                 employees_office_code: office.code_office,
-//                 city_employees: client.city
-//             };
-//         }));
-//     } catch (error) {
-//         console.error("Error fetching clients:", error);
-//         return [];
-//     }}
-
-export const getAllClientAndRepresentName = async () => {
+export const getAllClientAndRepresentNameTry1 = async () => {
+    
     try {
-        const clients = await (await fetch("http://localhost:5501/clients")).json();
-
-        return await Promise.all(clients.map(async (client) => {
-            const employees = await getEmployeesByCode(client.code_employee_sales_manager);
+        return await Promise.all((await (await fetch("http://localhost:5501/clients")).json()).map(async (client) => {
+            const [employee] = await getEmployeesByCode(client.code_employee_sales_manager);
+            const [office] = await getOfficesByCode(employee.code_office);
             
             return {
                 client_name: client.client_name,
-                employees_full_name: `${employees[0].name} ${employees[0].lastname1} ${employees[0].lastname2}`,
+                employees_full_name: `${employee.name} ${employee.lastname1} ${employee.lastname2}`,
+                employees_office_code: office.code_office,
                 city_employees: client.city
             };
         }));
@@ -72,3 +55,22 @@ export const getAllClientAndRepresentName = async () => {
         return [];
     }
 }
+
+// export const getAllClientAndRepresentNameTry2 = async () => {
+//     try {
+//         const clients = await (await fetch("http://localhost:5501/clients")).json();
+
+//         return await Promise.all(clients.map(async (client) => {
+//             const employees = await getEmployeesByCode(client.code_employee_sales_manager);
+            
+//             return {
+//                 client_name: client.client_name,
+//                 employees_full_name: `${employees[0].name} ${employees[0].lastname1} ${employees[0].lastname2}`,
+//                 city_employees: client.city
+//             };
+//         }));
+//     } catch (error) {
+//         console.error("Error fetching clients:", error);
+//         return [];
+//     }
+// }

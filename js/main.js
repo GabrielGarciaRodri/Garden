@@ -12,10 +12,10 @@ import{getBoss,
 
 import {getAllNameFromSpain,
         getAllClientFromMadrid,
-        getAllClientAndRepresentName
+        getAllClientAndRepresentNameTry1
 } from "./module/clients.js";
 
-console.log(await getAllClientAndRepresentName());
+console.log(await getAllClientAndRepresentNameTry1());
 
 
 
