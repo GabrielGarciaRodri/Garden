@@ -5,28 +5,52 @@ import {
 
 import{getBoss,
     getAllFullNameAndEmails,
-    getAllFullNamePositionDiferentSalesRepresentative
+    getAllFullNamePositionDiferentSalesRepresentative,
+    getEmployeesByCode,
+    getAllEmployeesAndBoss,
+    getAllEmployeesAndBossOfBoss,
+    getEmployeesWithBosses,
+    mapEmployeesAndBossesRecursively,
+    getEmployeesWithoutClients,
+    getEmployeesWithoutClientsAndOffices,
+    getEmployeesWithoutOfficeAndClients
+
 } from "./module/employee.js"
 
-// console.log(await getAllFullNamePositdionDiferentSalesRepresentative());
 
 import {getAllNameFromSpain,
         getAllClientFromMadrid,
-        getAllClientAndRepresentNameTry1
+        getAllClientWithRepresentativeInfo,
+        getAllClientsAndManager,
+        getAllClientsPaymentsAndManger,
+        getClientsNotPaymentsAndEmployee,
+        getClientsOfFuenlabrada,
+        getAllClientsAndEmployee,
+        getAllclientsNotPayments,
+        getAllclientsNotRequests,
+        getAllclientsNotRequestsAndNotPayments
+
 } from "./module/clients.js";
 
-console.log(await getAllClientAndRepresentNameTry1());
 
 
-
-import { getAllPaypalAndDate } from "./module/payments.js";
+import {getAllPaypalAndDate,
+        getPaymentsMethods
+ } from "./module/payments.js";
 
 // console.log(await getAllPaypalAndDate())
 
-import {getAllRequestStatus, getAllStatus} from "./module/request.js";
-import {
+import {getAllRequestStatus, 
+        getAllStatus,
         getAllRequestCodesClientCodesDateRequestAndDateWait,
-        getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays 
-} from "./module/request.js";
+        getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays,
+        getAllRequestsDeliveryEarly,
 
-//console.log(await getAllStatus());
+    } from "./module/request.js";
+
+import { 
+    getAllOrnamentalesPlus100,
+    getProductsNeverOrdered,
+    getProductsNotOrdered 
+} from "./module/product.js";
+

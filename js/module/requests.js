@@ -2,7 +2,7 @@
 
 export const getAllRequestStatus = async()=>{
     // let status = encodeURIComponent("status");
-    let res = await fetch("http://localhost:5507/requests");
+    let res = await fetch("http://localhost:5508/requests");
     let data = await res.json();
     let dataUpdate = data.map(val => {
         return{
@@ -14,7 +14,7 @@ export const getAllRequestStatus = async()=>{
 }
 
 export const getAllStatus = async() =>{
-    let res = await fetch("http://localhost:5507/requests")
+    let res = await fetch("http://localhost:5508/requests")
     let data = await res.json();
     let uniqueStatusMethods = new Set();
     data.forEach(val => {
@@ -28,7 +28,7 @@ export const getAllStatus = async() =>{
 // 9. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.
 
 export const getAllRequestCodesClientCodesDateRequestAndDateWait = async() => {
-    let res = await fetch(`http://localhost:5507/requests?status=Entregado`);
+    let res = await fetch(`http://localhost:5508/requests?status=Entregado`);
     let data = await res.json();
     let dataUpdate = [] 
 
@@ -54,7 +54,7 @@ export const getAllRequestCodesClientCodesDateRequestAndDateWait = async() => {
 //10. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos cuya fecha de entrega ha sido al menos dos días antes de la fecha esperada.
 
 export const getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays = async () =>{
-    let res = await fetch ("http://localhost:5507/requests?status=Entregado")
+    let res = await fetch ("http://localhost:5508/requests?status=Entregado")
     let data = await res.json();
     let dataUpdate = [];
     
@@ -93,3 +93,30 @@ export const getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays = asyn
 //     let data = await res.json();
 //     let 
 // }
+
+
+//Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos cuya fecha de entrega ha sido al menos dos días antes de la fecha esperada.
+export const getAllRequestsDeliveryEarly = async() =>{
+    let res = await fetch("http://localhost:5508/requests?status=Entregado")
+    let data = await res.json();
+    let dataUpdate = [];
+    data.forEach(val => {
+        let { date_delivery, date_wait } = val;
+        let requestDate = new Date(date_delivery);
+        let waitDate = new Date(date_wait);
+        let difference = waitDate.getTime() - requestDate.getTime();
+        let differenceInDays = difference / (1000 * 3600 * 24);
+        if (differenceInDays >= 2) {
+            dataUpdate.push(val);
+        }
+    })
+
+    return dataUpdate
+}
+
+
+export const getAllRequestByCode = async(code) =>{
+    let res = await fetch(`http://localhost:5508/requests?code_client=${code}`)
+    let data = await res.json();
+    return data
+}
