@@ -1,25 +1,23 @@
 
 import {
-    getAllOfficeCityAndMovil, getAllOfficeCodeCity 
+    getAllOfficeCityAndMovil, getAllOfficeAndcodeCity 
 } from "./module/office.js";
+
+// console.log(await getAllOfficeCodeCity());
 
 import{getBoss,
     getAllFullNameAndEmails,
     getAllFullNamePositionDiferentSalesRepresentative,
-    getEmployeesByCode,
     getAllEmployeesAndBoss,
     getAllEmployeesAndBossOfBoss,
-    getEmployeesWithBosses,
-    mapEmployeesAndBossesRecursively,
     getEmployeesWithoutClients,
-    getEmployeesWithoutClientsAndOffices,
-    getEmployeesWithoutOfficeAndClients
+    getEmployeesWithoutClientsAndOffices
 
 } from "./module/employee.js"
 
 
 import {getAllNameFromSpain,
-        getAllClientFromMadrid,
+        getAllClientFromMadridAndCode,
         getAllClientWithRepresentativeInfo,
         getAllClientsAndManager,
         getAllClientsPaymentsAndManger,
@@ -34,23 +32,23 @@ import {getAllNameFromSpain,
 
 
 
-import {getAllPaypalAndDate,
+import {getAllPaymentsFromPaypalEachYear,
         getPaymentsMethods
  } from "./module/payments.js";
 
-// console.log(await getAllPaypalAndDate())
 
-import {getAllRequestStatus, 
-        getAllStatus,
-        getAllRequestCodesClientCodesDateRequestAndDateWait,
-        getAllCodeRequestClientCodeDateWaitDateRequestAtLeastTwoDays,
-        getAllRequestsDeliveryEarly,
-
-    } from "./module/request.js";
+ import {getAllStatus,
+        getAllRequestsStatusRefused,
+        getAllRequestsStatusDelivered,
+        getAllRequestsCodeClientAndDate,
+        getAllRequestsDeliveryEarly
+} from "./module/request.js";
 
 import { 
     getAllOrnamentalesPlus100,
     getProductsNeverOrdered,
     getProductsNotOrdered 
 } from "./module/product.js";
+
+
 

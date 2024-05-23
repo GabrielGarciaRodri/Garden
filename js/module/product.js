@@ -15,7 +15,7 @@ export const getProductsNeverOrdered = async() =>{
     let productsRes = await fetch(`http://localhost:5506/products`);
     let products = await productsRes.json();
 
-    let ordersRes = await fetch(`http://localhost:5508/requests`);
+    let ordersRes = await fetch(`http://localhost:5507/requests`);
     let orders = await ordersRes.json();
 
     let productsInOrders = new Set();
@@ -36,7 +36,7 @@ export const getProductsNotOrdered = async() =>{
     let productsRes = await fetch(`http://localhost:5506/products`);
     let products = await productsRes.json();
 
-    let ordersRes = await fetch(`http://localhost:5508/requests`);
+    let ordersRes = await fetch(`http://localhost:5507/requests`);
     let orders = await ordersRes.json();
 
     let productsInOrders = new Set();
