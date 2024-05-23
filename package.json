@@ -6,14 +6,14 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch js/main.js",
-    "clients": "json-server js/db/clients.json -p 5501",
-    "employee": "json-server js/db/employee.json -p 5502",
-    "gama": "json-server js/db/gama.json -p 5503",
-    "office": "json-server js/db/office.json -p 5504",
-    "payments": "json-server js/db/payments.json -p 5505",
-    "product": "json-server js/db/product.json -p 5506",
-    "request": "json-server js/db/request.json -p 5507",
-    "delivery_details": "json-server js/db/delivery_details.json -p 5508"
+    "clients": "json-server -h 172.16.101.146 js/db/clients.json -p 5501",
+    "employee": "json-server -h 172.16.101.146 js/db/employee.json -p 5502",
+    "gama": "json-server -h 172.16.101.146 js/db/gama.json -p 5503",
+    "office": "json-server -h 172.16.101.146 js/db/office.json -p 5504",
+    "payments": "json-server -h 172.16.101.146 js/db/payments.json -p 5505",
+    "product": "json-server -h 172.16.101.146 js/db/product.json -p 5506",
+    "request": "json-server -h 172.16.101.146 js/db/request.json -p 5507",
+    "delivery_details": "json-server -h 172.16.101.146 js/db/delivery_details.json -p 5508"
   },
   "keywords": [],
   "author": "",

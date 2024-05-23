@@ -2,7 +2,7 @@
 
 
 export const getAllFullNameAndEmails = async () => {
-    let res = await fetch("http://localhost:5502/employee?code_boss=7");
+    let res = await fetch("http://172.16.101.146:5502/employee?code_boss=7");
     let data = await res.json();
     let dataUpdate = data.map(val => {
         return {
@@ -17,7 +17,7 @@ export const getAllFullNameAndEmails = async () => {
 //Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.
 
 export const getBoss = async() => {
-    let res = await fetch("http://localhost:5502/employee");
+    let res = await fetch("http://172.16.101.146:5502/employee");
     let data = await res.json();
     let dataUpdate = []
     data.forEach(val => {
@@ -36,7 +36,7 @@ export const getBoss = async() => {
 // 5. Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.
 
 export const getAllFullNamePositionDiferentSalesRepresentative = async()=>{
-    let res = await fetch ("http://localhost:5502/employee?position_ne=RepresentanteVentas");
+    let res = await fetch ("http://172.16.101.146:5502/employee?position_ne=RepresentanteVentas");
     let data = await res.json();
     let dataUpdate = []
     data.forEach(val => {
@@ -53,14 +53,14 @@ export const getAllFullNamePositionDiferentSalesRepresentative = async()=>{
 
 //Empleado por codigo
 export const getEmployeesByCode = async(code) =>{
-    let res = await fetch(`http://localhost:5502/employee?employee_code=${code}`)
+    let res = await fetch(`http://172.16.101.146:5502/employee?employee_code=${code}`)
     let data = await res.json();
     return data
 }
 
 // Obtener la informacion de un empleado
 export const getAllEmploy = async() =>{
-    let res = await fetch(`http://localhost:5502/employee`);
+    let res = await fetch(`http://172.16.101.146:5502/employee`);
     let data = await res.json();
     return data;
 }
@@ -68,13 +68,13 @@ export const getAllEmploy = async() =>{
 
 // Nombre empleados y nombres de jefes
 export const getAllEmployeesAndBoss = async() =>{
-    let res = await fetch("http://localhost:5502/employee")
+    let res = await fetch("http://172.16.101.146:5502/employee")
     let employees = await res.json();
 
     const bossMap = new Map();
     for (const employee of employees){
         if (employee.code_boss !== null) {
-            const bossRes = await fetch(`http://localhost:5502/employee/${employee.code_boss}`);
+            const bossRes = await fetch(`http://172.16.101.146:5502/employee/${employee.code_boss}`);
             const bossData = await bossRes.json();
             const bossName = `${bossData.name} ${bossData.lastname1} ${bossData.lastname2}`;
             bossMap.set(employee.code_boss, bossName);

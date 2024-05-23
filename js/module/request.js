@@ -1,7 +1,7 @@
 
 
 export const getAllRequestsStatusRefused = async() =>{
-    let res = await fetch("http://localhost:5507/requests?status=Rechazado");
+    let res = await fetch("http://172.16.101.146:5507/requests?status=Rechazado");
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -16,7 +16,7 @@ export const getAllRequestsStatusRefused = async() =>{
 
 // 7. Devuelve un listado con los distintos estados por los que puede pasar un pedido.
 export const getAllStatus = async() =>{
-    let res = await fetch("http://localhost:5507/requests")
+    let res = await fetch("http://172.16.101.146:5507/requests")
     let data = await res.json();
     let uniqueStatusMethods = new Set();
     data.forEach(val => {
@@ -30,7 +30,7 @@ export const getAllStatus = async() =>{
 //Devuelve un listado de todos los pedidos que han sido entregados en el mes de enero de cualquier año.
 
 export const getAllRequestsStatusDelivered = async() =>{
-    let res = await fetch("http://localhost:5507/requests?status=Entregado");
+    let res = await fetch("http://172.16.101.146:5507/requests?status=Entregado");
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -47,7 +47,7 @@ export const getAllRequestsStatusDelivered = async() =>{
 
 
 export const getAllRequestsCodeClientAndDate = async() =>{
-    let res = await fetch("http://localhost:5507/requests")
+    let res = await fetch("http://172.16.101.146:5507/requests")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -96,7 +96,7 @@ export const getAllRequestsCodeClientAndDate = async() =>{
 //10. Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos cuya fecha de entrega ha sido al menos dos días antes de la fecha esperada.
 
 export const getAllRequestsDeliveryEarly = async() =>{
-    let res = await fetch("http://localhost:5507/requests?status=Entregado")
+    let res = await fetch("http://172.16.101.146:5507/requests?status=Entregado")
     let data = await res.json();
     let dataUpdate = [];
     data.forEach(val => {
@@ -115,7 +115,7 @@ export const getAllRequestsDeliveryEarly = async() =>{
 
 
 export const getAllRequestByCode = async(code) =>{
-    let res = await fetch(`http://localhost:5507/requests?code_client=${code}`)
+    let res = await fetch(`http://172.16.101.146:5507/requests?code_client=${code}`)
     let data = await res.json();
     return data
 }
