@@ -5,6 +5,7 @@
   "main": "js/main.js",
   "type": "module",
   "scripts": {
+    "start-all": "npm run clients & npm run employee & npm run office & npm run payments & npm run product & npm run request",
     "dev": "node --watch js/main.js",
     "clients": "json-server -h 172.16.101.146 js/db/clients.json -p 5501",
     "employee": "json-server -h 172.16.101.146 js/db/employee.json -p 5502",
