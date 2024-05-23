@@ -12,14 +12,14 @@
     "office": "json-server js/db/office.json -p 5504",
     "payments": "json-server js/db/payments.json -p 5505",
     "product": "json-server js/db/product.json -p 5506",
-    "request": "json-server js/db/requests.json -p 5508",
-    "delivery_details": "json-server js/db/delivery_details.json -p 5509"
+    "request": "json-server js/db/request.json -p 5507",
+    "delivery_details": "json-server js/db/delivery_details.json -p 5508"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "async-prompt": "^1.0.1",
-    "json-server": "^1.0.0-alpha.23"
+    "json-server": "^1.0.0-beta.0"
   }
 }
